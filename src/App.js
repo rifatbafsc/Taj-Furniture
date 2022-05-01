@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router';
 import Home from './Components/Home/Home';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './Components/Header/Header';
+import Inventory from './Components/Inventory/Inventory';
 
 
 
@@ -13,7 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home></Home>}>Home</Route>
         <Route path="/home" element={<Home></Home>}>Home</Route>
-        <Route path="/Inventory" element={<Home></Home>}>Home</Route>
+        <Route path="/Inventory" element={<Inventory></Inventory>}>Inventory</Route>
         <Route path="/Login" element={<Home></Home>}>Home</Route>
         <Route path="*" element={<Home></Home>}>Home</Route>
       </Routes>

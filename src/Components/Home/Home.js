@@ -1,10 +1,17 @@
-import React, { useState } from 'react';
-import { Carousel } from 'react-bootstrap';
+import React from 'react';
+import { Button, Card, Carousel } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import useFurniture from '../../useFurniture/useFurniture';
+import Footer from '../Footer/Footer';
+import "./Home.css"
+
+
 
 const Home = () => {
-    const [items, setItems]= useFurniture([])
-    console.log(items);
+    const [items, setItems]= useFurniture([]);
+    const furnitureItems =items.slice(0,6);
+    
+    
     return (
         <div>
             <div>
@@ -51,14 +58,25 @@ const Home = () => {
                 <div>
                 <h1 className='text-center text-info'>Items</h1>
                 </div>
-                <div>
+                <div className='card-allign'>
                     {
-                        items.map(item=>(
-                            <h1>name:{item.name}</h1>
+                        furnitureItems.map(item=>(
+                            <Card  style={{ width: '18rem' }}>
+                                <Card.Img variant="top" src={item.img} />
+                                <Card.Body>
+                                    <Card.Title>{item.name}</Card.Title>
+                                    <Card.Text>
+                                    Price: {item.price} BDT
+                                    </Card.Text>
+                                    <Link to='/inventory'><Button variant="primary">checkout</Button></Link>
+                                </Card.Body>
+                                </Card>
                         ))
                     }
                 </div>
             </div>
+
+            <Footer></Footer>
             
         </div>
     );
