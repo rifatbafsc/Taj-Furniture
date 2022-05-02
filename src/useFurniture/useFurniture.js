@@ -5,7 +5,7 @@ const useFurniture = () => {
     
 
     useEffect(()=>{
-        fetch('furniture.json')
+        fetch('http://localhost:5000/items')
         .then(res=> res.json())
         .then(data => setItems(data));
     },[])

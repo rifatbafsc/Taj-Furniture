@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Card, Carousel } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import useFurniture from '../../useFurniture/useFurniture';
 import Footer from '../Footer/Footer';
 import "./Home.css"
@@ -8,8 +8,12 @@ import "./Home.css"
 
 
 const Home = () => {
-    const [items, setItems]= useFurniture([]);
+    const [items]= useFurniture([]);    
+    
     const furnitureItems =items.slice(0,6);
+    
+    const navigate =useNavigate();
+   
     
     
     return (
@@ -61,14 +65,19 @@ const Home = () => {
                 <div className='card-allign'>
                     {
                         furnitureItems.map(item=>(
+                            
                             <Card  style={{ width: '18rem' }}>
                                 <Card.Img variant="top" src={item.img} />
                                 <Card.Body>
                                     <Card.Title>{item.name}</Card.Title>
+                                    
+                                    <Card.Text>{item.details}</Card.Text>
+                                    <Card.Text>Supplier: {item.supplier}</Card.Text>
+                                    <Card.Text className='text-bold'>Quantity: {item.quantity}</Card.Text>
                                     <Card.Text>
                                     Price: {item.price} BDT
                                     </Card.Text>
-                                    <Link to='/inventory'><Button variant="primary">checkout</Button></Link>
+                                    <Button onClick={()=>navigate(`/items/${item._id}`)} variant="primary">stock update</Button>
                                 </Card.Body>
                                 </Card>
                         ))
