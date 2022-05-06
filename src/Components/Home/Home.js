@@ -64,9 +64,10 @@ const Home = () => {
                 </div>
                 <div className='card-allign'>
                     {
-                        furnitureItems.map(item=>(
+                        furnitureItems.map(item=>
                             
-                            <Card  style={{ width: '18rem' }}>
+                            <div key={item._id}>
+                                <Card  style={{ width: '18rem' }}>
                                 <Card.Img variant="top" src={item.img} />
                                 <Card.Body>
                                     <Card.Title>{item.name}</Card.Title>
@@ -80,7 +81,8 @@ const Home = () => {
                                     <Button onClick={()=>navigate(`/items/${item._id}`)} variant="primary">stock update</Button>
                                 </Card.Body>
                                 </Card>
-                        ))
+                            </div>
+                        )
                     }
                 </div>
             </div>
