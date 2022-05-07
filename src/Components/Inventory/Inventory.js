@@ -1,13 +1,19 @@
 import React from 'react';
 import { Button, Card } from 'react-bootstrap';
 import { useNavigate } from 'react-router';
+import { Link } from 'react-router-dom';
 import useFurniture from '../../useFurniture/useFurniture';
 
 const Inventory = () => {
     const [items] = useFurniture();
     const navigate =useNavigate();
     return (
-        <div className='card-allign'>
+        <div>
+            <div>
+                <Link to={'/additems'}><Button variant="primary">Add items</Button></Link>
+
+            </div>
+            <div className='card-allign'>
             {
                         items.map(item=>
                             
@@ -29,6 +35,7 @@ const Inventory = () => {
                             </div>
                         )
                     }
+        </div>
         </div>
     );
 };

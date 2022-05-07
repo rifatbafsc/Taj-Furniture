@@ -7,6 +7,8 @@ import Inventory from './Components/Inventory/Inventory';
 import ItemDetails from './Components/ItemDetails/ItemDetails';
 import PageNotFound from './Components/PageNotFound/PageNotFound';
 import ManageItems from './Components/ManageItems/ManageItems';
+import RestockItems from './Components/RestockItems/RestockItems';
+import AddItems from './Components/AddItems/AddItems';
 
 
 
@@ -19,7 +21,8 @@ function App() {
         <Route path="/home" element={<Home></Home>}></Route>
         <Route path="/inventory" element={<Inventory></Inventory>}></Route>
         <Route path="/blogs" element={<Inventory></Inventory>}></Route>
-        <Route path="/manageitems" element={<ManageItems></ManageItems>}></Route>
+        <Route path="/restockitems" element={<RestockItems></RestockItems>}></Route>
+        <Route path="/additems" element={<AddItems></AddItems>}></Route>
         <Route path="/login" element={<Home></Home>}></Route>
         <Route path="/items/:id" element={<ItemDetails></ItemDetails>}></Route>
         <Route path="*" element={<PageNotFound></PageNotFound>}></Route>
