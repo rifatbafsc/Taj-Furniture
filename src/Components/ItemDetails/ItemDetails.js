@@ -7,8 +7,7 @@ import { Link } from 'react-router-dom';
 const ItemDetails = () => {
     const {id} = useParams();
     const [items,setItems]= useState({});
-    const [quantity, setQuantity] = useState();
-    console.log(items);
+    const [quantity, setQuantity] = useState(10);
     
     useEffect(()=>{
         fetch(`http://localhost:5000/items/${id}`)
@@ -16,18 +15,23 @@ const ItemDetails = () => {
         .then(data =>setItems(data));
 
   },[])
-    const handleDelivered = id=>{
-        const sureDelivered =window.confirm('you want to delivered this item?')
-        if(sureDelivered){
-            setQuantity(quantity-1);
+    const handleDelivered = (event)=>{
+        event.preventDefault();
+        const deliveredQuantity= (quantity-1);
+            setQuantity(deliveredQuantity);
             
             }
-     }
-    
-    
-
+    const handleRestock = (event)=>{
+        event.preventDefault();
+        const restock = parseFloat(event.target.number.value);
+        const newQuantity= restock+quantity;
+            setQuantity(newQuantity);
+            
+            }
+  
     return (
         <div>
+              <div>
               <Card style={{ width: '30rem' }}>
                                 <Card.Img variant="top" src={items.img} />
                                 <Card.Body>
@@ -39,13 +43,21 @@ const ItemDetails = () => {
                                     <Card.Text>
                                     Price: {items.price} BDT
                                     </Card.Text>
-                                    {/* <Button variant="primary">Sold</Button> */}
-                                    <Button variant="primary">Restock</Button>
-                                    <Button onClick={()=>handleDelivered(id)} className='m-3' variant="primary">Dlivered</Button>
+                                    {
+                                        (quantity===0)?
+                                    <Button className='m-3' variant="primary">Sold Out</Button>:
+                                    <Button onClick={handleDelivered}  className='m-3' variant="primary">Dlivered</Button>
+                                    }
                                 </Card.Body>
-                                 <Link to={"/restockitems"}><Card.Text>Restock the Items</Card.Text>
-</Link>
-                                </Card>
+                              </Card>
+              </div>
+              <div>
+              <h4>Restock the items</h4>
+                  <form onSubmit={handleRestock} >
+                  <input type="number" placeholder='input number' name="number" />
+                  <button type="submit">Restock</button>
+                  </form>
+              </div>
             
         </div>
     );
