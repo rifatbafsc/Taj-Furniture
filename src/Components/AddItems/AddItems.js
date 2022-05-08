@@ -21,13 +21,13 @@ import toast, { Toaster } from "react-hot-toast";
       console.log(result);
   })
 
-  toast.success('Successfully toasted!')
+  toast.success('Successfully added!')
 
 
 };
    
   return (
-    <div>
+    <div className="vh-100">
         <form onSubmit={handleSubmit(onSubmit)}>
       <input placeholder="Name" {...register("name", { required: true, maxLength: 20 })} />
       <input placeholder="details" type='text' {...register("details")} />

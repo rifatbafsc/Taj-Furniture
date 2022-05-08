@@ -15,6 +15,7 @@ import PasswordReset from './Components/PasswordReset/PasswordReset';
 import Signup from './Components/Signup/Signup';
 import VerifyEmail from './Components/VerifyEmail/VerifyEmail';
 import RequireAuth from './Components/RequireAuth/RequireAuth';
+import Footer from './Components/Footer/Footer';
 
 
 
@@ -37,6 +38,7 @@ function App() {
         <Route path="/items/:id" element={<ItemDetails></ItemDetails>}></Route>
         <Route path="*" element={<PageNotFound></PageNotFound>}></Route>
       </Routes>
+      <Footer></Footer>
        
     </div>
   );

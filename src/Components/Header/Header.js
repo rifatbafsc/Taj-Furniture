@@ -17,7 +17,7 @@ const Header = () => {
     };
     return (
         <div>
-            <Navbar bg="light" expand="lg">
+            <Navbar bg="dark" variant="dark" expand="lg">
   <Container fluid>
     <Navbar.Brand to="/home">Taj furniture</Navbar.Brand>
     <Navbar.Toggle aria-controls="navbarScroll" />

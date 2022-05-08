@@ -9,11 +9,11 @@ const Inventory = () => {
     const navigate =useNavigate();
     return (
         <div>
-            <div>
+            <div className='m-4 text-center'>
                 <Link to={'/additems'}><Button variant="primary">Add items</Button></Link>
 
             </div>
-            <div className='card-allign'>
+            <div className='card-allign p-4'>
             {
                         items.map(item=>
                             

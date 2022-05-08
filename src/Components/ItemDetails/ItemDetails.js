@@ -74,6 +74,7 @@ const ItemDetails = () => {
                   <button type="submit">Restock</button>
                   </form>
               </div>
+              
             
         </div>
     );
