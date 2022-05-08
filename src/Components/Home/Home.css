@@ -1,4 +1,18 @@
 .card-allign{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    
+}
+
+@media only screen and (max-width: 768px){
+    .card-allign{
+
+            grid-template-columns: repeat(1,1fr);
+            
+        
+    }
+    
+}
+.slider-image{
+    height: 630px;
 }
