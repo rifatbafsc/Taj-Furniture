@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Card } from 'react-bootstrap';
 import { useParams } from 'react-router';
-import { Link } from 'react-router-dom';
+
 
 
 const ItemDetails = () => {
     const {id} = useParams();
     const [items,setItems]= useState({});
+    
     const [quantity, setQuantity] = useState(10);
+    // console.log(quantity);
     
     useEffect(()=>{
         fetch(`http://localhost:5000/items/${id}`)
@@ -17,10 +19,24 @@ const ItemDetails = () => {
   },[])
     const handleDelivered = (event)=>{
         event.preventDefault();
+        
         const deliveredQuantity= (quantity-1);
             setQuantity(deliveredQuantity);
+
+        //     fetch(`http://localhost:5000/items/${id}`,{
+        //         method: "PUT",
+        //         headers: {
+        //             'content-type': 'application/json'
+        //         },
+        //         body: JSON.stringify(deliveredQuantity)
+        //     })
+        // .then(res=>res.json())
+        // .then(data =>{console.log(data);
+        // event.target.reset();
             
-            }
+        //     })
+        }
+
     const handleRestock = (event)=>{
         event.preventDefault();
         const restock = parseFloat(event.target.number.value);
@@ -61,6 +77,6 @@ const ItemDetails = () => {
             
         </div>
     );
-};
 
+};
 export default ItemDetails;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Card, Carousel } from 'react-bootstrap';
 import { useNavigate } from 'react-router';
+import { Link } from 'react-router-dom';
 import useFurniture from '../../useFurniture/useFurniture';
 import Footer from '../Footer/Footer';
 import "./Home.css"
@@ -86,6 +87,10 @@ const Home = () => {
                     }
                 </div>
             </div>
+
+                <div>
+                    <Link to='/myitems'> <Button>Manage Inventories</Button></Link>
+                </div>
 
             <Footer></Footer>
             

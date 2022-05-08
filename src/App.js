@@ -6,10 +6,10 @@ import Header from './Components/Header/Header';
 import Inventory from './Components/Inventory/Inventory';
 import ItemDetails from './Components/ItemDetails/ItemDetails';
 import PageNotFound from './Components/PageNotFound/PageNotFound';
-import ManageItems from './Components/ManageItems/ManageItems';
 import RestockItems from './Components/RestockItems/RestockItems';
 import AddItems from './Components/AddItems/AddItems';
 import MyItems from './Components/MyItems/MyItems';
+import Blogs from './Components/Blogs/Blogs';
 
 
 
@@ -21,7 +21,7 @@ function App() {
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/home" element={<Home></Home>}></Route>
         <Route path="/inventory" element={<Inventory></Inventory>}></Route>
-        <Route path="/blogs" element={<Inventory></Inventory>}></Route>
+        <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route path="/restockitems" element={<RestockItems></RestockItems>}></Route>
         <Route path="/additems" element={<AddItems></AddItems>}></Route>
         <Route path="/myitems" element={<MyItems></MyItems>}></Route>

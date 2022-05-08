@@ -1,8 +1,11 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import toast, { Toaster } from "react-hot-toast";
 
  const AddItems= ()=> {
   const { register, handleSubmit } = useForm();
+  const notify = () => toast('Here is your toast.');
+
 
   const onSubmit = data => {
       console.log(data);
@@ -19,6 +22,9 @@ import { useForm } from "react-hook-form";
       console.log(result);
   })
 
+  toast.success('Successfully toasted!')
+
+
 };
    
   return (
@@ -30,7 +36,9 @@ import { useForm } from "react-hook-form";
       <input placeholder="Price" type="number" {...register("price")} />
       <input placeholder="Quantity" type="number" {...register("quantity")} />
       <input placeholder="Supplier" type="text" {...register("supplier")} />
-      <input type="submit" value='Add Items' />
+      <input onClick={notify} type="submit" value='Add Items' />
+      <Toaster
+      />
     </form>
     </div>
   );
