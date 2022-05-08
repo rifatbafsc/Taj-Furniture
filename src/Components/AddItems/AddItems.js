@@ -4,7 +4,6 @@ import toast, { Toaster } from "react-hot-toast";
 
  const AddItems= ()=> {
   const { register, handleSubmit } = useForm();
-  const notify = () => toast('Here is your toast.');
 
 
   const onSubmit = data => {
@@ -36,9 +35,11 @@ import toast, { Toaster } from "react-hot-toast";
       <input placeholder="Price" type="number" {...register("price")} />
       <input placeholder="Quantity" type="number" {...register("quantity")} />
       <input placeholder="Supplier" type="text" {...register("supplier")} />
-      <input onClick={notify} type="submit" value='Add Items' />
+      <input type="submit" value='Add Items' />
       <Toaster
-      />
+        position="top-center"
+        reverseOrder={true}
+        />
     </form>
     </div>
   );

@@ -10,6 +10,9 @@ import RestockItems from './Components/RestockItems/RestockItems';
 import AddItems from './Components/AddItems/AddItems';
 import MyItems from './Components/MyItems/MyItems';
 import Blogs from './Components/Blogs/Blogs';
+import Login from './Components/Login/Login';
+import PasswordReset from './Components/PasswordReset/PasswordReset';
+import Signup from './Components/Signup/Signup';
 
 
 
@@ -25,7 +28,9 @@ function App() {
         <Route path="/restockitems" element={<RestockItems></RestockItems>}></Route>
         <Route path="/additems" element={<AddItems></AddItems>}></Route>
         <Route path="/myitems" element={<MyItems></MyItems>}></Route>
-        <Route path="/login" element={<Home></Home>}></Route>
+        <Route path="/login" element={<Login></Login>}></Route>
+        <Route path='/signup' element={<Signup></Signup>} ></Route>
+        <Route path='/reset' element={<PasswordReset></PasswordReset>} ></Route>
         <Route path="/items/:id" element={<ItemDetails></ItemDetails>}></Route>
         <Route path="*" element={<PageNotFound></PageNotFound>}></Route>
       </Routes>

@@ -1,8 +1,20 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
 import { Container, Form, FormControl, Nav, Navbar } from 'react-bootstrap';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
+import auth from '../../Firebase/Firebase.init';
 
 const Header = () => {
+  const [user, loading, error] = useAuthState(auth);
+
+  if (loading) {
+    return;
+  }
+  
+    const logout = () => {
+      signOut(auth);
+    };
     return (
         <div>
             <Navbar bg="light" expand="lg">
@@ -19,7 +31,10 @@ const Header = () => {
         <Link className='m-2 text-decoration-none' to="/inventory">Inventory</Link>
         <Link className='m-2 text-decoration-none' to="/blogs">Blogs</Link>
         <Link className='m-2 text-decoration-none' to="/myitems">My items</Link>
-        <Link className='m-2 text-decoration-none' to="/login">Login</Link>
+        {
+            (user?.email)? <Nav.Link onClick={logout} href="/login">Logout</Nav.Link>:
+            <Nav.Link href="/login">Login</Nav.Link>
+          }
       </Nav>
       
     </Navbar.Collapse>
