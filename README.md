@@ -19,7 +19,7 @@ It's a furniture website where you can choose your furniture, this website has m
 * HTML5
 * CSS3
 * React bootstrap
-* JavaScript
+* JavaScript(ES6)
 * Firebase
 * React.Js
 * React-Router(hooks, CustomHooks)

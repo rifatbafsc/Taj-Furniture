@@ -19,7 +19,7 @@ const Header = () => {
         <div>
             <Navbar bg="dark" variant="dark" expand="lg">
   <Container fluid>
-    <Navbar.Brand to="/home">Taj furniture</Navbar.Brand>
+    <Link className='text-decoration-none' to='/home'><Navbar.Brand to="/home">Taj furniture</Navbar.Brand></Link>
     <Navbar.Toggle aria-controls="navbarScroll" />
     <Navbar.Collapse id="navbarScroll">
       <Nav

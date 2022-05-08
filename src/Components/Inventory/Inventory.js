@@ -18,7 +18,7 @@ const Inventory = () => {
                         items.map(item=>
                             
                             <div key={item._id}>
-                                <Card  style={{ width: '18rem' }}>
+                                <Card  className='shadow-lg p-3 mb-5 bg-body rounded' style={{ width: '18rem' }}>
                                 <Card.Img variant="top" src={item.img} />
                                 <Card.Body>
                                     <Card.Title>{item.name}</Card.Title>

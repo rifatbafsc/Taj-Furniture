@@ -64,12 +64,12 @@ const Home = () => {
                 <div>
                 <h1 className='text-center text-info text-success mt-5 p-5'>Items</h1>
                 </div>
-                <div className='card-allign mt-5 p-5'>
+                <div className='card-allign mt-5 p-5 '>
                     {
                         furnitureItems.map(item=>
                             
                             <div key={item._id}>
-                                <Card style={{ width: '18rem' }}>
+                                <Card className='shadow-lg p-3 mb-5 bg-body rounded' style={{ width: '18rem' }}>
                                 <Card.Img variant="top" src={item.img} />
                                 <Card.Body>
                                     <Card.Title>{item.name}</Card.Title>
@@ -98,7 +98,7 @@ const Home = () => {
                      <div className='card-allign mt-5 p-5'>
                         {
                             sofa.map(sofaItem=>
-                                <Card className='mt-2 column gx-5' style={{ width: '18rem' }}>
+                                <Card className='mt-2 column gx-5 shadow-lg p-3 mb-5 bg-body rounded' style={{ width: '18rem' }}>
                         <Card.Img variant="top" src={sofaItem.img} />
                         <Card.Body>
                             <Card.Title>{sofaItem.name}</Card.Title>
@@ -115,7 +115,7 @@ const Home = () => {
                 <h1 className='text-center mt-5 p-5 text-success'>All Bed</h1>
                 <div className='card-allign mt-5 p-5'>
                     {bed.map(bedItem=>
-                    <Card style={{ width: '18rem' }}>
+                    <Card  className='shadow-lg p-3 mb-5 bg-body rounded' style={{ width: '18rem' }}>
                     <Card.Img variant="top" src={bedItem.img} />
                     <Card.Body>
                         <Card.Title>{bedItem.name}</Card.Title>
