@@ -16,24 +16,27 @@ const Signup = () => {
     const[passError, setPassError] =useState('');
     const [updateProfile, updating, UpdateError] = useUpdateProfile(auth);
     
+    
     const [
         createUserWithEmailAndPassword,
         user,
         loading,
         error,
-      ] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
+      ] = useCreateUserWithEmailAndPassword(auth);
       const navigate = useNavigate();
 
     const handlesubmit=async (event)=>{
       event.preventDefault();
       if(password!==confirmPassword){
-        setPassError("password doesn't match") ;
-      }else{
+        alert("password doesn't match") ;
+      }
+       
+      else{
       await createUserWithEmailAndPassword(email, password)
       await updateProfile({ displayName: name });
           alert('Updated profile');
 
-          navigate('/login');
+          navigate('/verfyemail');
       }
 
     }

@@ -13,6 +13,8 @@ import Blogs from './Components/Blogs/Blogs';
 import Login from './Components/Login/Login';
 import PasswordReset from './Components/PasswordReset/PasswordReset';
 import Signup from './Components/Signup/Signup';
+import VerifyEmail from './Components/VerifyEmail/VerifyEmail';
+import RequireAuth from './Components/RequireAuth/RequireAuth';
 
 
 
@@ -26,10 +28,11 @@ function App() {
         <Route path="/inventory" element={<Inventory></Inventory>}></Route>
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route path="/restockitems" element={<RestockItems></RestockItems>}></Route>
-        <Route path="/additems" element={<AddItems></AddItems>}></Route>
-        <Route path="/myitems" element={<MyItems></MyItems>}></Route>
+        <Route path="/additems" element={<RequireAuth><AddItems></AddItems></RequireAuth>}></Route>
+        <Route path="/myitems" element={<RequireAuth><MyItems></MyItems></RequireAuth>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path='/signup' element={<Signup></Signup>} ></Route>
+        <Route path='/verfyemail' element={<VerifyEmail></VerifyEmail>} ></Route>
         <Route path='/reset' element={<PasswordReset></PasswordReset>} ></Route>
         <Route path="/items/:id" element={<ItemDetails></ItemDetails>}></Route>
         <Route path="*" element={<PageNotFound></PageNotFound>}></Route>
