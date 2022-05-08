@@ -2,6 +2,8 @@
 
 [Taj furniture](https://taj-furniture-c54c0.web.app/).
 
+# Website features
+
 It's a furniture website where you can choose your furniture, this website has many features
 
 * User can Add items in this website
