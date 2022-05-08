@@ -10,6 +10,7 @@ const PasswordReset = () => {
     const notify = () => toast.success('Email sent! Check your Email');
 
     const [emailReset, setEmailReset]= useState('');
+    console.log(emailReset);
     const [sendPasswordResetEmail, sending, error] = useSendPasswordResetEmail(
         auth
       );
@@ -18,7 +19,7 @@ const PasswordReset = () => {
         await sendPasswordResetEmail(emailReset);
         
         if (sending) {
-            return <p>Sending...</p>;
+            return;
           }
             
             
@@ -28,9 +29,9 @@ const PasswordReset = () => {
     return (
             <div>
             <div className='form-margin d-flex justify-content-center align-items-center'>
-                <Form>
+                <Form onSubmit={handleResetSubmit}>
                 <Form.Group controlId="formBasicEmail">
-                    <input className='input-space' name='email' onChange={(e) => setEmailReset(e.target.value)} type="email" placeholder="Enter your email" required />
+                    <input className='input-space' onChange={(e) => setEmailReset(e.target.value)} type="email" placeholder="Enter your email" required />
                     
                 </Form.Group>
                 
