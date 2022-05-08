@@ -18,7 +18,7 @@ It's a furniture website where you can choose your furniture, this website has m
 
 * HTML5
 * CSS3
-* React Boostrap
+* React bootstrap
 * JavaScript
 * Firebase
 * React.Js
